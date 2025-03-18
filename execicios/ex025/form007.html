@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formúlario</title>
 </head>
+<!-- Quando o formulário requerum campo de texto e melhor usar o metodo post, pois o get envia os dados pela url e o post não, metedo get passou de 3,000,00 bytes ele não envia-->
 <body>
     <h1>Exemplo de Formulário</h1>
-    <form action="cadastro.php" method="get" autocomplete="on">
+    <form action="cadastro.php" method="post" autocomplete="on">
         <p>
             <label for="iest">Estado</label>
             <select name="estado" id="iest">
+                <option value="">---Escolha---</option>
                 <optgroup label="região 1">
                     <option value="AC">Acre</option>
                     <option value="AL">Alagoas</option>
@@ -25,6 +27,20 @@
             </select>
         </p>
 
+        <p>
+            <label for="iprof">Profissão</label>
+            <input type="text" name="prof" id="iprof" list="lstprof">
+            <datalist id="lstprof">
+                <option value="AdS">Analista de Sistemas
+                <option>Programador
+                <option>desenvolvedorweb
+                <option> ADM de redes</option>
+            </datalist>
+        </p>
+        <p>
+            <label for="imsg">Mensaguem</label><br>
+            <textarea name="msg" id="imsg" cols="30" rows="10"></textarea>
+        </p>
         <p>
             <input type="submit" value="Enviar">
             <input type="reset" value="Limpar">
